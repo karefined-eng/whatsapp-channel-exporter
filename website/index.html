@@ -165,9 +165,6 @@
     }
     </script>
   
-    <!-- Vercel Telemetry -->
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
     <script type="speculationrules">
     {
       "prerender": [
@@ -290,13 +287,15 @@
           <h2 class="text-gradient-reveal">How to Download WA Channel Messages</h2>
           <ol style="text-align: left; margin-left: 2rem; line-height: 1.8; margin-top: 1rem; margin-bottom: 1rem;">
             <li><strong>Download</strong> the extension <code>.zip</code> package using the button above.</li>
-            <li>Open a channel in WhatsApp Web and make sure the updates you want to archive are loaded.</li>
+            <li><strong>Unzip</strong> the downloaded package into a folder; Chrome loads the extracted folder, not the ZIP file.</li>
             <li>Open Chrome and navigate to <strong><code>chrome://extensions</code></strong>.</li>
-            <li>Toggle on <strong>"Developer mode"</strong> in the top right corner, then simply <strong>drag and drop</strong> the downloaded file into the window.</li>
+            <li>Toggle on <strong>"Developer mode"</strong>, click <strong>"Load unpacked"</strong>, and select the extracted folder.</li>
+            <li>Open WhatsApp Web, open an authorized Channel, and launch the extension side panel.</li>
           </ol>
           <p class="solution-text">
             <span class="read-ticks">✓✓</span> <em>The extension is now installed and ready to download channel messages from WhatsApp Web!</em>
           </p>
+          <p class="legal-note"><strong>Before scanning:</strong> the extension reads the open Channel view, stores only local preferences, and saves the archive you request. It is read-only and does not send messages. See the <a href="/privacy-policy">privacy policy</a> for permissions and data handling.</p>
         </div>
       </section>
 

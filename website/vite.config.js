@@ -31,7 +31,13 @@ export default defineConfig({
         docs: resolve(__dirname, 'documentation.html'),
         about: resolve(__dirname, 'about.html'),
         support: resolve(__dirname, 'support.html'),
-        terms: resolve(__dirname, 'terms-of-service.html')
+        terms: resolve(__dirname, 'terms-of-service.html'),
+        es: resolve(__dirname, 'es/index.html'),
+        esPrivacy: resolve(__dirname, 'es/privacy-policy.html'),
+        esSupport: resolve(__dirname, 'es/support.html'),
+        ptBr: resolve(__dirname, 'pt-br/index.html'),
+        ptBrPrivacy: resolve(__dirname, 'pt-br/privacy-policy.html'),
+        ptBrSupport: resolve(__dirname, 'pt-br/support.html')
       }
     }
   }

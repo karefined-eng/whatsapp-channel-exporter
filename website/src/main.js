@@ -6,6 +6,15 @@ inject();
 injectSpeedInsights();
 
 document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks && !navLinks.querySelector('[data-language-switcher]')) {
+    const switcher = document.createElement('span');
+    switcher.dataset.languageSwitcher = 'true';
+    switcher.className = 'language-switcher';
+    switcher.innerHTML = '<a href="/" lang="en">EN</a><span aria-hidden="true">·</span><a href="/es/" lang="es">ES</a><span aria-hidden="true">·</span><a href="/pt-br/" lang="pt-BR">PT-BR</a>';
+    navLinks.insertBefore(switcher, navLinks.firstChild);
+  }
+
   // Always set dark theme for the new premium UI
   document.documentElement.setAttribute('data-theme', 'dark');
   

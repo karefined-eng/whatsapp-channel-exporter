@@ -112,6 +112,21 @@ body {
 .nav-links a:hover {
   color: var(--text-primary);
 }
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.language-switcher a {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.language-switcher span {
+  opacity: 0.55;
+}
 .nav-links .github-link {
   color: var(--text-primary);
   border: 1px solid var(--border);

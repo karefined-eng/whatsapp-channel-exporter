@@ -86,5 +86,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/es", "destination": "/es/index.html" },
+    { "source": "/es/", "destination": "/es/index.html" },
+    { "source": "/es/privacy-policy", "destination": "/es/privacy-policy.html" },
+    { "source": "/es/support", "destination": "/es/support.html" },
+    { "source": "/pt-br", "destination": "/pt-br/index.html" },
+    { "source": "/pt-br/", "destination": "/pt-br/index.html" },
+    { "source": "/pt-br/privacy-policy", "destination": "/pt-br/privacy-policy.html" },
+    { "source": "/pt-br/support", "destination": "/pt-br/support.html" }
   ]
 }

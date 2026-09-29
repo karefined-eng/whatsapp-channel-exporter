@@ -10,6 +10,14 @@ const allowed = new Set([
   'https://wachannelexporter.me/privacy-policy',
   'https://wachannelexporter.me/support',
   'https://wachannelexporter.me/terms-of-service',
+  'https://wachannelexporter.me/es/',
+  'https://wachannelexporter.me/es',
+  'https://wachannelexporter.me/es/privacy-policy',
+  'https://wachannelexporter.me/es/support',
+  'https://wachannelexporter.me/pt-br/',
+  'https://wachannelexporter.me/pt-br',
+  'https://wachannelexporter.me/pt-br/privacy-policy',
+  'https://wachannelexporter.me/pt-br/support',
 ]);
 const xml = fs.readFileSync(path, 'utf8');
 const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
