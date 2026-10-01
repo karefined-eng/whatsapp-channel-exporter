@@ -69,9 +69,9 @@ This summary is **104 characters**, within Chrome's 132-character summary limit.
 
 | Permission | Justification |
 |---|---|
-| `storage` | Stores export preferences and user settings locally so they persist between sessions. |
+| `storage` | Stores scan-progress and download-status metadata locally so the extension can track user-requested export operations. |
 | `downloads` | Saves the ZIP or PDF export to the user's local file system after the user starts an export. |
-| `activeTab` | Allows the extension to interact with the tab the user has explicitly selected for an export action. |
+| `activeTab` | Owner review required: no direct `activeTab` API use was found in the current implementation; confirm necessity before using a permission justification in the Dashboard. |
 | `scripting` | Starts the user-requested scan and reads the WhatsApp Channel feed in the active WhatsApp Web tab. |
 | `sidePanel` | Provides the persistent export interface beside WhatsApp Web. |
 | `tabs` | Checks that the selected tab is WhatsApp Web before allowing a scan to start. |
@@ -79,9 +79,9 @@ This summary is **104 characters**, within Chrome's 132-character summary limit.
 
 ### Reviewer notes
 
-> To test the extension, open `https://web.whatsapp.com/`, sign in with a test account, open a Channel, and open the WA Channel Exporter side panel. Choose a date range and start a scan. The extension reads only the selected Channel feed and creates a local export. No external account or test credential is required beyond the reviewer's own WhatsApp Web session.
+> To test the extension, use a WhatsApp Web session authorized to access a Channel. Open the WA Channel Exporter side panel, review the in-product disclosure, select its acknowledgment checkbox, then choose a short date range and start a scan. No project account or project-supplied WhatsApp credentials are provided.
 >
-> The extension is read-only. It does not send messages, alter Channel content, change account settings, or communicate with an application server. Media that WhatsApp Web no longer exposes is reported as unavailable or failed in the archive rather than silently omitted.
+> The extension reads the selected Channel view and retrieves available media from URLs exposed by WhatsApp Web. It does not send messages, modify the WhatsApp account, or upload Channel content to a server operated by the project. Content that WhatsApp Web does not expose is reported as unavailable or failed rather than silently presented as complete.
 
 ## Microsoft Edge Add-ons
 
@@ -139,9 +139,9 @@ Use the same permission justifications and privacy disclosure provided in the Ch
 
 ### Reviewer notes
 
-> To test the extension, open `https://web.whatsapp.com/`, sign in with a test account, open a Channel, and open the WA Channel Exporter side panel. Choose a date range and start a scan. The extension reads only the selected Channel feed and creates a local export. No external account or test credential is required beyond the reviewer's own WhatsApp Web session.
+> To test the extension, use a WhatsApp Web session authorized to access a Channel. Open the WA Channel Exporter side panel, review the in-product disclosure, select its acknowledgment checkbox, then choose a short date range and start a scan. No project account or project-supplied WhatsApp credentials are provided.
 >
-> The extension is read-only. It does not send messages, alter Channel content, change account settings, or communicate with an application server. Media that WhatsApp Web no longer exposes is reported as unavailable or failed in the archive rather than silently omitted.
+> The extension reads the selected Channel view and retrieves available media from URLs exposed by WhatsApp Web. It does not send messages, modify the WhatsApp account, or upload Channel content to a server operated by the project. Content that WhatsApp Web does not expose is reported as unavailable or failed rather than silently presented as complete.
 
 ## Shared listing fields
 
@@ -154,9 +154,11 @@ Use the same permission justifications and privacy disclosure provided in the Ch
 | Website | https://wachannelexporter.me/ |
 | Privacy policy | https://wachannelexporter.me/privacy-policy |
 | Support page | https://wachannelexporter.me/support |
-| Support email | support@wachannelexporter.com |
+| Support email | ka.refined+support@gmail.com |
 | Package for Chrome | `wa-channel-exporter-chrome.zip` |
 | Package for Edge | `wa-channel-exporter-edge.zip` |
+
+The Chrome Web Store Store Listing form exposes a Support URL, not a separate support-email field. Keep the email separate from that URL field; use it only in public contact copy or a dashboard field explicitly labeled for an email address.
 
 ## Accuracy notes for submission
 

@@ -23,9 +23,9 @@
 - [ ] Review every permission in `manifest.json` and confirm it is necessary for the single purpose:
   - [ ] `storage` — local preferences and scan state.
   - [ ] `downloads` — saving user-requested archives.
-  - [ ] `activeTab` — user-invoked active-tab access.
+  - [ ] `activeTab` — owner review required: no direct `activeTab` API use was found in the current source; confirm necessity before justifying this permission or prepare a separately tested, versioned manifest change.
   - [ ] `scripting` — running the extraction workflow in the active WhatsApp Web tab.
-  - [ ] `sidePanel` — displaying the extension interface.
+  - [ ] `sidePanel` — displaying the extension interface beside WhatsApp Web.
   - [ ] `tabs` — identifying and validating the active WhatsApp Web tab.
   - [ ] `https://web.whatsapp.com/*` — reading the open Channel view used by the export workflow.
 - [ ] Confirm the permissions shown in the Developer Dashboard match the permissions in the submitted package.
@@ -43,6 +43,9 @@
 - [ ] Confirm the policy states that WA Channel Exporter does not upload Channel content, credentials, phone numbers, or archives to a server operated by the project.
 - [ ] Confirm the policy discloses third-party handling when a user voluntarily contacts support through email or GitHub.
 - [ ] Confirm the policy contains retention and deletion guidance.
+- [ ] Owner review: source writes `activeScanJob` and `downloadStatus:*` to `chrome.storage.local`; no cleanup-handler caller was found, so confirm retention and deletion behavior before making a policy promise.
+- [ ] Owner review: media retrieval uses `fetch` with credentials for `data:`, `blob:`, and HTTP(S) URLs exposed by WhatsApp Web; do not describe the extension as making no network requests.
+- [ ] Owner review: the website loads Vercel Analytics and Speed Insights while some public copy says “zero telemetry”; verify the actual site behavior and disclose it accurately or narrow/remove the claim.
 - [ ] Confirm the policy contains the Chrome Web Store Limited Use compliance statement.
 - [ ] Confirm the policy states that data is not sold or used for advertising, unrelated profiling, creditworthiness, lending, or data brokerage.
 - [ ] Confirm the extension UI shows a prominent disclosure before scanning.
@@ -98,6 +101,8 @@ Then complete the following checks:
 
 - [ ] `npm run build` completes successfully.
 - [ ] Build the Chrome and Edge submission packages with `npm run build:stores`; verify each packaged `manifest.json` omits the development-only `key` field before upload.
+- [ ] Upload only `wa-channel-exporter-chrome.zip` to the Chrome Web Store; `wa-channel-exporter-edge.zip` is for Edge, and generic `wa-channel-exporter.zip` includes the development-only `key` field and must not be submitted.
+- [ ] If keeping a versioned copy such as `wa-channel-exporter-v1.3.1.zip`, recreate it from the verified Chrome archive and confirm it is byte-identical, has forward-slash ZIP entry paths, and has no manifest `key`.
 - [ ] `node scripts/test-exports.mjs` reports `status: PASS`.
 - [ ] `node scripts/test-mv3.js` reports Manifest V3 and package checks as `PASS`.
 - [ ] Confirm the generated ZIP exists and is non-empty:
@@ -127,7 +132,7 @@ sha256sum wa-channel-exporter-chrome.zip wa-channel-exporter-edge.zip
 
 ## 6. Store listing fields
 
-Use the final reviewed copy from `CHROMEWEBSTORE.md` and verify every field in the Developer Dashboard.
+Use the final reviewed copy from `docs/STORE-LISTING-COPY.md` and verify every field in the Developer Dashboard. Treat the root `CHROMEWEBSTORE.md` file as superseded historical material, not as the live field source.
 
 ### Identity and positioning
 
@@ -150,18 +155,16 @@ Use the final reviewed copy from `CHROMEWEBSTORE.md` and verify every field in t
 - [ ] Use permission justifications that match `manifest.json` and the privacy policy.
 - [ ] Add the privacy policy URL:
   `https://wachannelexporter.me/privacy-policy`
-- [ ] Add the support URL:
-  `https://wachannelexporter.me/support`
-- [ ] Add the support email:
-  `support@wachannelexporter.com`
+- [ ] Support URL is optional; if the owner chooses to include it, use the public support page `https://wachannelexporter.me/support`. Do not put an email address in this URL field.
+- [ ] Use `ka.refined+support@gmail.com` in public support copy and in any dashboard field explicitly labeled for an email address. The Store Listing tab inspected for this draft exposes no separate support-email field.
 - [ ] Confirm the homepage URL is current:
   `https://wachannelexporter.me/`
 
 ## 7. Graphics and promotional assets
 
-- [ ] Upload the final 128×128 extension icon.
+- [ ] Include and upload the final 128×128 PNG extension/store icon.
 - [ ] Confirm the icon is original project branding and does not imitate official WhatsApp or Meta branding.
-- [ ] Upload the required first screenshot showing the extension working beside a WhatsApp Channel in WhatsApp Web.
+- [ ] Upload at least one 1280×800 screenshot (up to five); the official image guidance also accepts 640×400 screenshots.
 - [ ] Upload additional screenshots showing:
   - [ ] Date range and export controls.
   - [ ] Scan progress and completeness status.
@@ -169,8 +172,10 @@ Use the final reviewed copy from `CHROMEWEBSTORE.md` and verify every field in t
   - [ ] PDF or structured export output.
 - [ ] Use consistent dimensions and readable annotations.
 - [ ] Ensure screenshots do not expose phone numbers, private Channel content, account identifiers, or unrelated browser tabs.
-- [ ] Confirm screenshots show the actual current UI, including the privacy disclosure where appropriate.
-- [ ] Upload the promotional tile only if it accurately represents the submitted version.
+- [ ] Confirm screenshot artwork accurately represents the submitted user experience. The local screenshots are promotional composites rather than fresh authenticated WhatsApp Web captures; owner review is required before upload.
+- [ ] Upload the required 440×280 PNG/JPEG small promotional tile; a local candidate is `store-assets/promo-tile-440x280.png`.
+- [ ] Treat the 1400×560 marquee tile (`store-assets/marquee-tile-1400x560.png`) as optional.
+- [ ] Provide the required YouTube promo-video link showcasing the extension; the current draft's Global promo video field is empty, and no owner-approved URL is recorded in the project files.
 - [ ] Verify every uploaded asset is the final asset and not a development mockup.
 
 ## 8. Review notes for the Chrome Web Store reviewer

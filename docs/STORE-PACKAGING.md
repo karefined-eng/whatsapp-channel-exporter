@@ -20,6 +20,8 @@ This creates two local, ignored archives:
 
 Both packages use Manifest V3, remove the development-only `key` field, contain the same extension code and permissions, and are built from the same source commit. Only the store-specific manifest description and archive filename differ.
 
+For Chrome Web Store submission, upload only `wa-channel-exporter-chrome.zip`. The generic `wa-channel-exporter.zip` is a development/website package that retains the manifest's development-only `key` field and must not be submitted. If the tracked versioned snapshot `wa-channel-exporter-v1.3.1.zip` is used, refresh it from the verified Chrome archive and confirm its checksum, forward-slash entry paths, and keyless manifest.
+
 The build also removes legacy dynamic-code fallbacks from the bundled JSZip and PDFMake files. The extension does not need string callbacks or remote code; the packaged bundles are checked for `eval` and `new Function` patterns by `node scripts/test-mv3.js`.
 
 To build one package independently:

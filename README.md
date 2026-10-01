@@ -14,7 +14,7 @@
 
 > **WA Channel Exporter** is an independent Chrome extension built specifically to **download WhatsApp Channel messages, videos, and photos** into a portable ZIP archive or a formatted PDF document. It is designed to run entirely in your browser, without sending channel data to an external server.
 
-🌐 **[Visit the official website for Documentation and Downloads](https://whatsapp-channel-exporter.vercel.app/)**
+🌐 **[Visit the official website for Documentation and Downloads](https://wachannelexporter.me/)**
 
 ---
 
