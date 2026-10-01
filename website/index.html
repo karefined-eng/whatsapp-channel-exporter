@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <title>WA Channel Exporter | Download WA Channel Messages</title>
-    <meta name="description" content="Save WhatsApp Channel posts, photos, videos, and voice notes as offline HTML, CSV, Markdown, or ZIP archives." />
+    <meta name="description" content="Save WhatsApp Channel posts, photos, videos, and voice notes offline as HTML, CSV, Markdown, or ZIP files; data stays on your device." />
     <meta name="keywords" content="download WA channel messages, download WhatsApp Channel messages, save WA channel updates, export WhatsApp Channel, download channel media" />
     <meta name="author" content="karefined-eng" />
     <meta name="robots" content="index, follow" />
@@ -21,14 +21,14 @@
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Plaintext LLM Summary" />
 
     <!-- Performance: Preload LCP Candidate & Stylesheets -->
-    <link rel="preload" as="image" href="/promo-screenshot-1.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/promo-screenshot-1-900.webp" imagesrcset="/promo-screenshot-1-600.webp 600w, /promo-screenshot-1-900.webp 900w, /promo-screenshot-1.webp 1376w" imagesizes="(max-width: 964px) calc(100vw - 4rem), 900px" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wachannelexporter.me/" />
     <meta property="og:title" content="WA Channel Exporter | Download WA Channel Messages" />
-    <meta property="og:description" content="Save WhatsApp Channel posts, photos, videos, and voice notes as offline HTML, CSV, Markdown, or ZIP archives." />
+    <meta property="og:description" content="Save WhatsApp Channel posts, photos, videos, and voice notes offline as HTML, CSV, Markdown, or ZIP files; data stays on your device." />
     <meta property="og:image" content="https://wachannelexporter.me/og-main.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wachannelexporter.me/" />
     <meta name="twitter:title" content="WA Channel Exporter | Download WA Channel Messages" />
-    <meta name="twitter:description" content="Save WhatsApp Channel posts, photos, videos, and voice notes as offline HTML, CSV, Markdown, or ZIP archives." />
+    <meta name="twitter:description" content="Save WhatsApp Channel posts, photos, videos, and voice notes offline as HTML, CSV, Markdown, or ZIP files; data stays on your device." />
     <meta name="twitter:image" content="https://wachannelexporter.me/og-main.png" />
     
     <!-- Open Graph -->
@@ -105,22 +105,12 @@
           "license": "https://www.gnu.org/licenses/agpl-3.0.html"
         },
         {
-          "@type": "BreadcrumbList",
-          "@id": "https://wachannelexporter.me/#breadcrumbs",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://wachannelexporter.me/"
-            }
-          ]
-        },
-        {
           "@type": "WebPage",
           "@id": "https://wachannelexporter.me/#webpage",
           "url": "https://wachannelexporter.me/",
           "name": "WA Channel Exporter | Download WA Channel Messages",
+          "description": "Save WhatsApp Channel posts, photos, videos, and voice notes offline as HTML, CSV, Markdown, or ZIP files; data stays on your device.",
+          "mainEntity": {"@id": "https://wachannelexporter.me/#software"},
           "isPartOf": {"@id": "https://wachannelexporter.me/#website"},
           "about": {"@id": "https://wachannelexporter.me/#software"},
           "publisher": {"@id": "https://wachannelexporter.me/#organization"}
@@ -213,6 +203,7 @@
           <span class="logo">WA Channel Exporter</span>
         </a>
         <div class="nav-links">
+          <span class="language-switcher" data-language-switcher="true"><a href="/" lang="en">EN</a><span aria-hidden="true">·</span><a href="/es/" lang="es">ES</a><span aria-hidden="true">·</span><a href="/pt-br/" lang="pt-BR">PT-BR</a></span>
           <a href="#features">Features</a>
           <a href="#comparison">Comparison</a>
           <a href="#architecture">How It Works</a>
@@ -225,7 +216,7 @@
           </a>
           <a href="https://github.com/karefined-eng/whatsapp-channel-exporter/releases/latest/download/wa-channel-exporter.zip" class="btn btn-primary btn-nav">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
-            Download
+            Download the Extension
           </a>
         </div>
       </div>
@@ -256,8 +247,8 @@
           
           <div class="hero-image-wrapper" style="margin-top: 3rem; position: relative;">
             <picture>
-              <source srcset="/promo-screenshot-1.webp" type="image/webp" />
-              <img src="/promo-screenshot-1.webp" srcset="/promo-screenshot-1.webp 1x" alt="WA Channel Exporter Interface showing offline archive controls" width="1376" height="768" fetchpriority="high" decoding="async" style="width: 100%; max-width: 900px; height: auto; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);" />
+              <source srcset="/promo-screenshot-1-600.webp 600w, /promo-screenshot-1-900.webp 900w, /promo-screenshot-1.webp 1376w" sizes="(max-width: 964px) calc(100vw - 4rem), 900px" type="image/webp" />
+              <img src="/promo-screenshot-1-900.webp" srcset="/promo-screenshot-1-600.webp 600w, /promo-screenshot-1-900.webp 900w, /promo-screenshot-1.webp 1376w" sizes="(max-width: 964px) calc(100vw - 4rem), 900px" alt="WA Channel Exporter Interface showing offline archive controls" width="1376" height="768" fetchpriority="high" decoding="async" style="width: 100%; max-width: 900px; height: auto; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);" />
             </picture>
           </div>
         </div>
@@ -267,19 +258,19 @@
       <section class="container fade-in-up delay-1" style="margin-top: 4rem;">
         <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
           <h2 class="text-gradient-reveal" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Inside the Extension</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">A clean, lightweight side panel that works right alongside WhatsApp Web.</p>
+          <p style="color: var(--text-muted); font-size: 1rem;">A clean, lightweight side panel that works right alongside WhatsApp Web.</p>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 700px; margin: 0 auto;">
           <div class="glass-card" style="padding: 1rem;">
             <picture>
-              <source srcset="/actual-ui-1.webp" type="image/webp" />
-              <img src="/actual-ui-1.webp" srcset="/actual-ui-1.webp 1x" alt="Extension date range and media filter configuration" width="379" height="686" loading="eager" decoding="async" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);" />
+              <source srcset="/actual-ui-1-280.webp 280w, /actual-ui-1.webp 379w" sizes="(max-width: 343px) 248px, (max-width: 768px) calc(100vw - 6rem), 270px" type="image/webp" />
+              <img src="/actual-ui-1.webp" srcset="/actual-ui-1-280.webp 280w, /actual-ui-1.webp 379w" sizes="(max-width: 343px) 248px, (max-width: 768px) calc(100vw - 6rem), 270px" alt="Extension date range and media filter configuration" width="379" height="686" loading="eager" decoding="async" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);" />
             </picture>
           </div>
           <div class="glass-card" style="padding: 1rem;">
             <picture>
-              <source srcset="/actual-ui-2.webp" type="image/webp" />
-              <img src="/actual-ui-2.webp" srcset="/actual-ui-2.webp 1x" alt="Extension scan and extraction progress indicator" width="376" height="688" loading="eager" decoding="async" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);" />
+              <source srcset="/actual-ui-2-280.webp 280w, /actual-ui-2.webp 376w" sizes="(max-width: 343px) 248px, (max-width: 768px) calc(100vw - 6rem), 270px" type="image/webp" />
+              <img src="/actual-ui-2.webp" srcset="/actual-ui-2-280.webp 280w, /actual-ui-2.webp 376w" sizes="(max-width: 343px) 248px, (max-width: 768px) calc(100vw - 6rem), 270px" alt="Extension scan and extraction progress indicator" width="376" height="688" loading="eager" decoding="async" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);" />
             </picture>
           </div>
         </div>
@@ -325,11 +316,11 @@
         <div class="glass-card" style="padding: 2.5rem; text-align: left;">
           <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
             <h2 class="text-gradient-reveal" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Comparison: WA Channel Exporter vs Alternatives</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Why traditional chat utilities fail on broadcast feeds and how client-side archiving excels.</p>
+            <p style="color: var(--text-muted); font-size: 1rem;">Why traditional chat utilities fail on broadcast feeds and how client-side archiving excels.</p>
           </div>
           
           <div style="overflow-x: auto;">
-            <table class="comparison-table" style="width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left;">
+            <table class="comparison-table" style="width: 100%; border-collapse: collapse; font-size: 1rem; text-align: left;">
               <caption class="sr-only">Feature comparison of WA Channel Exporter with native WhatsApp export and cloud scrapers</caption>
               <thead>
                 <tr style="border-bottom: 1px solid var(--card-border); background: rgba(255,255,255,0.03);">
@@ -414,7 +405,7 @@
             <p>Archive WhatsApp Channel communications in consistent local packages that can be retained and reviewed under your organization’s records process.</p>
           </div>
         </div>
-        <p style="max-width: 760px; margin: 1.5rem auto 0; color: var(--text-muted); text-align: center; font-size: 0.9rem;">Archives document what the browser captured at the time of scanning; they are not automatically tamper-evident and do not guarantee legal admissibility.</p>
+        <p style="max-width: 760px; margin: 1.5rem auto 0; color: var(--text-muted); text-align: center; font-size: 1rem;">Archives document what the browser captured at the time of scanning; they are not automatically tamper-evident and do not guarantee legal admissibility.</p>
       </section>
 
       <!-- Features Section -->
@@ -469,27 +460,27 @@
         <div class="glass-card" style="padding: 2.5rem; text-align: left;">
           <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
             <h2 class="text-gradient-reveal" style="font-size: 1.8rem; margin-bottom: 0.5rem;">How Client-Side Archiving Works</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Engineered for security, accuracy, and complete privacy.</p>
+            <p style="color: var(--text-muted); font-size: 1rem;">Engineered for security, accuracy, and complete privacy.</p>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
             <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); padding: 1.5rem; border-radius: 12px;">
               <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">1. DOM Virtualization Reader</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+              <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
                 WhatsApp Web recycles DOM nodes to preserve device memory. Our content script hooks the scroll container to capture historical updates progressively without triggering browser memory leaks. Each rendered card is parsed for timestamps, verified badges, and text payloads before being unmounted from the active viewport.
               </p>
             </div>
 
             <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); padding: 1.5rem; border-radius: 12px;">
               <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">2. Local Blob Rehydration</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+              <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
                 Media files are fetched directly through the authenticated browser session as raw blobs, converted to base64 for message passing, and bundled with MIME preservation. By leveraging existing session credentials, extraction bypasses rate limits and avoids external API calls.
               </p>
             </div>
 
             <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); padding: 1.5rem; border-radius: 12px;">
               <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">3. In-Browser ZIP Assembly</h3>
-              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+              <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
                 Using JSZip inside your browser, the tool generates a self-contained archive containing an authentic dark-theme HTML viewer, raw CSV, formatted Markdown, and your downloaded media. The resulting bundle requires zero external dependencies and runs completely standalone on any operating system.
               </p>
             </div>
