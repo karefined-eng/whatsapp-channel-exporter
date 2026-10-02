@@ -11,26 +11,29 @@ const allowed = new Set([
   'https://wachannelexporter.me/support',
   'https://wachannelexporter.me/terms-of-service',
   'https://wachannelexporter.me/es/',
-  'https://wachannelexporter.me/es',
   'https://wachannelexporter.me/es/privacy-policy',
   'https://wachannelexporter.me/es/support',
   'https://wachannelexporter.me/pt-br/',
-  'https://wachannelexporter.me/pt-br',
   'https://wachannelexporter.me/pt-br/privacy-policy',
   'https://wachannelexporter.me/pt-br/support',
+]);
+const canonicalAliases = new Map([
+  ['https://wachannelexporter.me/es', 'https://wachannelexporter.me/es/'],
+  ['https://wachannelexporter.me/pt-br', 'https://wachannelexporter.me/pt-br/'],
 ]);
 const xml = fs.readFileSync(path, 'utf8');
 const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
 const seen = new Set();
 const kept = [];
 for (const block of urls) {
-  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  const generatedLoc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  const loc = generatedLoc && (canonicalAliases.get(generatedLoc) ?? generatedLoc);
   if (loc && allowed.has(loc) && !seen.has(loc)) {
     seen.add(loc);
-    // The sitemap plugin assigns the current build time to every URL; omit this
-    // synthetic value rather than implying each page was updated at that time.
-    const withoutGeneratedLastmod = block.replace(/<lastmod>[\s\S]*?<\/lastmod>/i, '');
-    kept.push(`<url>${withoutGeneratedLastmod}</url>`);
+    // Omit build-time lastmod and the ignored changefreq/priority hints.
+    const canonicalBlock = block.replace(/<loc>[\s\S]*?<\/loc>/i, `<loc>${loc}</loc>`);
+    const withoutOptionalMetadata = canonicalBlock.replace(/<(lastmod|changefreq|priority)>[\s\S]*?<\/\1>/gi, '');
+    kept.push(`<url>${withoutOptionalMetadata}</url>`);
   }
 }
 fs.writeFileSync(path, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${kept.join('')}</urlset>\n`);

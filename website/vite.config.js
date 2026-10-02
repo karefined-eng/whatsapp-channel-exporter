@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     Sitemap({
       hostname: 'https://wachannelexporter.me',
+      generateRobotsTxt: false,
       dynamicRoutes: [
         '/',
         '/export-to-pdf',
@@ -17,7 +18,13 @@ export default defineConfig({
         '/privacy-policy',
         '/about',
         '/support',
-        '/terms-of-service'
+        '/terms-of-service',
+        '/es/',
+        '/es/privacy-policy',
+        '/es/support',
+        '/pt-br/',
+        '/pt-br/privacy-policy',
+        '/pt-br/support'
       ]
     })
   ],
