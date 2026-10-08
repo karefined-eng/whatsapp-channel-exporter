@@ -1,20 +1,20 @@
 <div align="center">
 
 # WA Channel Exporter
-### The Ultimate Chrome Extension to Export WhatsApp Channel Messages & Media
+### A local-first Chrome extension for exporting WhatsApp Channel messages and media
 
 [![Status: pilot](https://img.shields.io/badge/status-pilot-0f766e?style=flat-square)](https://github.com/karefined-eng/whatsapp-channel-exporter)
 [![Chrome](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
 [![Privacy](https://img.shields.io/badge/data%20handling-local--first-16a34a?style=flat-square)](#privacy-and-rights)
 [![License: AGPL--3.0](https://img.shields.io/badge/license-AGPL--3.0-111827?style=flat-square)](LICENSE)
 
-**Download WhatsApp Channel history directly to your computer. Local-first, read-only, and zero cloud uploads.**
+**Save WhatsApp Channel posts, photos, videos, and audio from WhatsApp Web to local ZIP, HTML, CSV, Markdown, or PDF archives.**
 
 </div>
 
 > **WA Channel Exporter** is an independent Chrome extension built specifically to **download WhatsApp Channel messages, videos, and photos** into a portable ZIP archive or a formatted PDF document. It is designed to run entirely in your browser, without sending channel data to an external server.
 
-🌐 **[Visit the official website for Documentation and Downloads](https://wachannelexporter.me/)**
+🌐 **[Visit the official website](https://wachannelexporter.me/)** · **[Read the documentation](https://wachannelexporter.me/documentation)** · **[Download the latest release](https://github.com/karefined-eng/whatsapp-channel-exporter/releases/latest/download/wa-channel-exporter.zip)** · **[Read the FAQ](https://wachannelexporter.me/faq)**
 
 ---
 
@@ -22,9 +22,7 @@
 
 If you've searched for *"how to save messages from a whatsapp channel"*, you probably noticed that the standard **"Export Chat"** feature is completely disabled for Channels. WhatsApp built Channels as a one-way broadcast feed, meaning there is **no official bulk export tool** or chat-backup option for channel history.
 
-Furthermore, popular chat backup tools and web-scraping extensions (like *WAnalysis* or *WA Chat Backup*) only work for 1-on-1 chats and standard groups. They fail completely when trying to read the WhatsApp Channels "Updates" feed.
-
-**WA Channel Exporter is the solution.** It is specifically engineered as a read-only **WhatsApp Channel archiver and media downloader**, giving you a clean, timestamped archive of the channels you follow.
+WhatsApp Channel Exporter is designed for the Channels "Updates" feed rather than private chats or groups. It reads the Channel view that is already open in your authorized WhatsApp Web session and creates a timestamped local archive.
 
 ## Who is WA Channel Exporter for?
 
@@ -52,9 +50,16 @@ Archives document what the browser captured at the time of scanning; they are no
 | **Enriched Markdown & CSV-Export** | `posts.md` contains chronological posts with inline image embeds. `posts.csv` provides structured data-extraction ready for **excel-export** and spreadsheet analysis. |
 | **Channel Auto-Detection** | Automatically reads the active Channel name from the conversation header. |
 | **Date-Bounded Scans** | Pick custom start/end dates or use one-click presets (**This Month**, **Last 7 Days**, **All Loaded**). |
-| **100% Local-first Privacy** | Zero server uploads, zero logins, zero telemetry. All processing happens directly inside your browser session. |
+| **Local-first Privacy** | The extension is designed to process archive contents locally in your browser session. Review the source and privacy policy for the current data-handling details. |
 
 ---
+
+## Documentation and guides
+
+- [How to export WhatsApp Channel messages](https://wachannelexporter.me/how-to-export-whatsapp-channel-messages)
+- [How to download WhatsApp Channel media](https://wachannelexporter.me/download-media)
+- [How to archive WhatsApp Channel updates](https://wachannelexporter.me/whatsapp-channel-archive-guide)
+- [Frequently asked questions](https://wachannelexporter.me/faq)
 
 ## FAQ: Frequently Asked Questions
 

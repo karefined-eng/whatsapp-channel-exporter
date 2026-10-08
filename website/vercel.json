@@ -113,6 +113,18 @@
       "destination": "/support.html"
     },
     {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/how-to-export-whatsapp-channel-messages",
+      "destination": "/how-to-export-whatsapp-channel-messages.html"
+    },
+    {
+      "source": "/whatsapp-channel-archive-guide",
+      "destination": "/whatsapp-channel-archive-guide.html"
+    },
+    {
       "source": "/terms-of-service",
       "destination": "/terms-of-service.html"
     },
