@@ -33,7 +33,7 @@
     }
   ],
   "host_permissions": ["https://web.whatsapp.com/*"],
-  "permissions": ["storage", "downloads", "scripting", "sidePanel", "tabs"],
+  "permissions": ["storage", "downloads", "scripting", "sidePanel", "activeTab", "tabs"],
   "web_accessible_resources": [
     {
       "resources": ["src/core/*", "src/shared/*"],
