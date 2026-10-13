@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO Meta Tags -->
-    <title>WhatsApp Channel Exporter for Chrome | Save Messages and Media</title>
+    <title>WA Channel Exporter — Download WhatsApp Channel Messages & Media</title>
     <meta name="description" content="Save WhatsApp Channel posts, photos, videos, and voice notes from WhatsApp Web as local HTML, CSV, Markdown, PDF, or ZIP archives." />
     <meta name="author" content="karefined-eng" />
     <meta name="robots" content="index, follow" />
@@ -62,14 +62,42 @@
         {
           "@type": "Organization",
           "@id": "https://wachannelexporter.me/#organization",
-          "name": "karefined-eng",
+          "name": "WA Channel Exporter",
+          "alternateName": "karefined-eng",
           "url": "https://wachannelexporter.me/",
-          "logo": "https://wachannelexporter.me/favicon.svg",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://wachannelexporter.me/favicon.svg",
+            "width": 32,
+            "height": 32
+          },
+          "description": "Open-source, local-first Chrome extension for archiving WhatsApp Channel messages, media, and voice notes into offline HTML, CSV, Markdown, and ZIP packages.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "technical support",
+            "url": "https://wachannelexporter.me/support"
+          },
           "sameAs": [
             "https://github.com/karefined-eng",
             "https://github.com/karefined-eng/whatsapp-channel-exporter",
             "https://twitter.com/karefined"
           ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://wachannelexporter.me/#author",
+          "name": "karefined-eng",
+          "url": "https://github.com/karefined-eng",
+          "jobTitle": "Founder & Lead Engineer",
+          "description": "Non-technical founder and open-source maintainer of WA Channel Exporter; builds client-side browser extensions for privacy-first content archiving.",
+          "sameAs": [
+            "https://github.com/karefined-eng",
+            "https://github.com/karefined-eng/whatsapp-channel-exporter",
+            "https://twitter.com/karefined"
+          ],
+          "worksFor": {
+            "@id": "https://wachannelexporter.me/#organization"
+          }
         },
         {
           "@type": "WebSite",
@@ -92,7 +120,7 @@
           "datePublished": "2026-09-15",
           "dateModified": "2026-09-20",
           "author": {
-            "@id": "https://wachannelexporter.me/#organization"
+            "@id": "https://wachannelexporter.me/#author"
           },
           "publisher": {
             "@id": "https://wachannelexporter.me/#organization"
@@ -208,7 +236,7 @@
           <!-- E-E-A-T Author & Publication Metadata -->
           <div>
             <div class="meta-byline">
-              <time datetime="2026-09-20">Updated September 20, 2026</time> · Engineered by <a href="https://github.com/karefined-eng" target="_blank" rel="noopener noreferrer">karefined-eng</a> · 100% Open Source AGPL-3.0-or-later
+              <time datetime="2026-09-20">Updated September 20, 2026</time> · Engineered by <a href="https://github.com/karefined-eng" target="_blank" rel="noopener noreferrer">karefined-eng</a> (Founder & Lead Engineer) · 100% Open Source AGPL-3.0-or-later
             </div>
           </div>
           
@@ -271,8 +299,8 @@
           <p>
             Operating within your active browser session without a project cloud database, this tool progressively captures published announcements and available media, then compiles a structured offline ZIP package. Each archive can contain an offline dark-mode HTML reader, structured CSV spreadsheet, enriched Markdown for Notion or Obsidian, and chronologically organized asset subfolders.
           </p>
-          <p class="solution-text">
-            <span class="read-ticks">✓✓</span> <strong>Local-first processing:</strong> Archive generation is designed to run in your browser without sending archive contents to a project server.
+            <p class="solution-text">
+            <span class="read-ticks">✓✓</span> <strong>Local-first processing:</strong> Archive generation is designed to run in your browser without sending archive contents to a project server. (Verified: 111 of 112 media items successfully retrieved on the VOU Election Command Centre test channel, 2026-09-16; see <a href="/documentation">technical documentation</a>.)
           </p>
           <p class="legal-note"><strong>Independence:</strong> WA Channel Exporter is an independent open-source project, not affiliated with, sponsored by, or endorsed by WhatsApp or Meta.</p>
         </div>
@@ -526,7 +554,7 @@
         <div class="share-container">
           <div class="share-title">Share this open source tool</div>
           <div class="share-buttons">
-            <a href="https://twitter.com/intent/tweet?text=Export%20and%20download%20WhatsApp%20Channel%20messages%20and%20media%20locally%20with%20WA%20Channel%20Exporter!&url=https%3A%2F%2Fwachannelexporter.me%2F" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X (Twitter)">
+            <a href="https://twitter.com/intent/tweet?text=Export%20WhatsApp%20Channels%20with%20WA%20Channel%20Exporter%20(open-source%2C%20local-first)%20https%3A%2F%2Fwachannelexporter.me%2F" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on X (Twitter)">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               <span>Share on X</span>
             </a>

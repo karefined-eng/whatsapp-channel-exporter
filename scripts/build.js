@@ -5,14 +5,19 @@ const JSZip = require("jszip");
 const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
 const vendor = path.join(root, "src", "vendor");
-const storeBuild = process.env.STORE_BUILD === "true";
-const storeTarget = process.env.STORE_TARGET || "chrome";
-const archiveName = process.env.ARCHIVE_NAME || "wa-channel-exporter.zip";
+const args = process.argv.slice(2);
+const argValue = (name) => {
+  const index = args.indexOf(name);
+  return index === -1 ? undefined : args[index + 1];
+};
+const storeBuild = process.env.STORE_BUILD === "true" || args.includes("--store");
+const storeTarget = argValue("--store") || process.env.STORE_TARGET || "chrome";
+const archiveName = argValue("--archive") || process.env.ARCHIVE_NAME || "wa-channel-exporter.zip";
 const archive = path.join(root, path.basename(archiveName));
 
 const storeDescriptions = {
   chrome: "Export WhatsApp Channel posts from WhatsApp Web into a local ZIP archive with date ranges and missing-item reports.",
-  edge: "WA Channel Exporter is a local-first, read-only browser extension for exporting authorized WhatsApp Channel posts and available media from WhatsApp Web. Choose a date range and export posts, media, or both into a portable ZIP archive with an offline viewer, structured JSONL and CSV records, PDF output, and clear reports for unavailable or partial content. No channel content is uploaded to a server, and the extension does not send messages or modify your WhatsApp account.",
+  edge: "Export WhatsApp Channel posts and available media from WhatsApp Web into a local, organized ZIP archive.",
 };
 
 function copyTree(source, target) {

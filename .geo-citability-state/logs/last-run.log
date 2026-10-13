@@ -1,0 +1,22 @@
+# seomator-geo-audit 1.2.1 — 2026-10-13T13:22:22+00:00
+error: GEO_E_DNS
+Couldn't resolve wachannelexporter.me.
+
+Traceback (most recent call last):
+  File "C:\Users\asamoah\AppData\Roaming\uv\tools\seomator-geo-audit\Lib\site-packages\geo_audit\cli.py", line 505, in main
+    envelope = COMMANDS[args.command](args, run_id)
+  File "C:\Users\asamoah\AppData\Roaming\uv\tools\seomator-geo-audit\Lib\site-packages\geo_audit\commands\score.py", line 28, in run
+    page = load_page(args.url, options)
+  File "C:\Users\asamoah\AppData\Roaming\uv\tools\seomator-geo-audit\Lib\site-packages\geo_audit\commands\common.py", line 154, in load_page
+    result = http.fetch(
+        url,
+    ...<4 lines>...
+        session=session,
+    )
+  File "C:\Users\asamoah\AppData\Roaming\uv\tools\seomator-geo-audit\Lib\site-packages\geo_audit\lib\http.py", line 288, in fetch
+    _validate_target(current, allow_private, first_hop=not chain)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asamoah\AppData\Roaming\uv\tools\seomator-geo-audit\Lib\site-packages\geo_audit\lib\http.py", line 224, in _validate_target
+    raise GeoError("GEO_E_DNS", f"Couldn't resolve {host}.") from None
+geo_audit.errors.GeoError: Couldn't resolve wachannelexporter.me.
+

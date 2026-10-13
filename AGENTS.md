@@ -38,3 +38,9 @@
   - When both `package-lock.json` and `pnpm-lock.yaml` are present in the repository, Dependabot inspects both.
   - Running `npm audit fix --package-lock-only` avoids Puppeteer postinstall download errors and file-lock EPERM issues while safely patching `package-lock.json`.
   - If Dependabot continues to flag high-severity vulnerabilities, run `pnpm up <vulnerable-package> -r` to sync the pnpm lockfile as well.
+
+## 5. Tool Quirks & Environment Traps (Friction Log — 2026-10-13)
+- **`seomator self doctor` hangs (timeout >120s):** Chrome/Chromium detection hangs. Use `--no-cwv` when Core Web Vitals + browser render are not needed.
+- **PowerShell `cat` with `2>/dev/null`:** `cat file 2>/dev/null | head -N` fails with a path-not-found parser error in PowerShell 5.1. Use `Get-Content <path> -Head N` instead.
+- **PowerShell `||` separator:** Invalid. Use `;` (e.g., `cmd1; cmd2`).
+- **Audit output format preference:** For AI consumption, always prefer `seomator audit --format llm` (50-70% smaller than JSON) and `geo audit --json` (machine-readable envelope).

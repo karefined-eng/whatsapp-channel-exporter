@@ -7,7 +7,7 @@
 **Category:** Productivity  
 **Prepared:** 2026-09-25
 
-This document is the canonical copy source for the `1.3.1` store submissions. The Chrome and Edge packages contain the same extension behavior. Their manifest descriptions differ only because the stores apply different description constraints.
+This document is the canonical copy source for the `1.3.1` store submissions. The Chrome and Edge packages contain the same extension behavior. Each store build writes its short manifest description; enter the longer store description separately in the listing form.
 
 ## Chrome Web Store
 
@@ -71,7 +71,6 @@ This summary is **104 characters**, within Chrome's 132-character summary limit.
 |---|---|
 | `storage` | Stores scan-progress and download-status metadata locally so the extension can track user-requested export operations. |
 | `downloads` | Saves the ZIP or PDF export to the user's local file system after the user starts an export. |
-| `activeTab` | Owner review required: no direct `activeTab` API use was found in the current implementation; confirm necessity before using a permission justification in the Dashboard. |
 | `scripting` | Starts the user-requested scan and reads the WhatsApp Channel feed in the active WhatsApp Web tab. |
 | `sidePanel` | Provides the persistent export interface beside WhatsApp Web. |
 | `tabs` | Checks that the selected tab is WhatsApp Web before allowing a scan to start. |
@@ -133,9 +132,20 @@ This summary is **104 characters**, within Chrome's 132-character summary limit.
 
 > Exports posts and available media from a WhatsApp Channel opened in WhatsApp Web into a local archive selected by the user.
 
-### Permission and privacy text
+### Permission justifications
 
-Use the same permission justifications and privacy disclosure provided in the Chrome section. In Partner Center, select **No** for remote code: all extension logic is packaged locally, and no remotely hosted JavaScript is loaded or executed.
+| Permission | Justification |
+|---|---|
+| `storage` | Stores scan progress and download-status metadata locally so the extension can track user-requested export operations. |
+| `downloads` | Saves the ZIP or PDF export to the user's local file system after the user starts an export. |
+| `scripting` | Starts the user-requested scan and runs the extraction logic in the active WhatsApp Web tab. The package declares a matching WhatsApp Web host permission. |
+| `sidePanel` | Provides the persistent export interface in Microsoft Edge's side panel. |
+| `tabs` | Identifies the active tab, checks that it is WhatsApp Web, and sends scan requests to its content script. |
+| `https://web.whatsapp.com/*` | Limits page access to WhatsApp Web, where the user selects the Channel to export. |
+
+### Privacy and remote-code declarations
+
+Disclose that the extension reads Channel post text, timestamps, the Channel name, and available media from the user's active WhatsApp Web session when the user starts an export. It processes this content locally only to create the requested archive, and saves the export through the browser download flow. The extension does not transmit Channel content to a project server, sell it, or use it for advertising or unrelated purposes. In Partner Center, select **No** for remote code: all executable extension logic is packaged locally, and no remotely hosted JavaScript is loaded or executed.
 
 ### Reviewer notes
 
@@ -158,7 +168,7 @@ Use the same permission justifications and privacy disclosure provided in the Ch
 | Package for Chrome | `wa-channel-exporter-chrome.zip` |
 | Package for Edge | `wa-channel-exporter-edge.zip` |
 
-The Chrome Web Store Store Listing form exposes a Support URL, not a separate support-email field. Keep the email separate from that URL field; use it only in public contact copy or a dashboard field explicitly labeled for an email address.
+Microsoft Edge Add-ons accepts a support webpage URL or a support email address in its Support contact detail field. Use `https://wachannelexporter.me/support` or `ka.refined+support@gmail.com` there.
 
 ## Accuracy notes for submission
 
