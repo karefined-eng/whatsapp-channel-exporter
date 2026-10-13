@@ -45,4 +45,6 @@
 - **PowerShell `||` separator:** Invalid. Use `;` (e.g., `cmd1; cmd2`).
 - **Node 26 / Windows `execFileSync('npm', ...)` fails with `ENOENT`/`EINVAL`:** Node ≥20 refuses to spawn `.cmd` shims without a shell, and `npm` is `npm.cmd` on Windows. **Workaround:** use `process.platform === 'win32' ? 'npm.cmd' : 'npm'` plus `shell: true` (see `website/scripts/prepare-download.mjs`). This broke `npm run build` locally while Vercel/Linux was unaffected.
 - **`npm run build` must run from repo root for the website build chain:** root `build:store`/website `prebuild` spawns the root build; running inside `website/` alone skips the `vite build` + sitemap `postbuild` steps.
+- **PowerShell mangles inline `node -e` scripts:** double quotes/backslashes get stripped or re-parsed (`Expected ',', got ':'`). **Workaround:** write a temp `.mjs` script (e.g. under `%TEMP%\kilo\`) and run `node <file>`.
+- **Reading Chromium/Edge profile SQLite DBs on this machine:** no `sqlite3` CLI, no `better-sqlite3` installed; Node 26's built-in `node:sqlite` (`new DatabaseSync(path, { readOnly: true })`) works and was used to inspect `Default/History`, `Top Sites`, `Favicons`.
 - **Audit output format preference:** For AI consumption, always prefer `seomator audit --format llm` (50-70% smaller than JSON) and `geo audit --json` (machine-readable envelope).
