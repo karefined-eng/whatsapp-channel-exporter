@@ -43,4 +43,6 @@
 - **`seomator self doctor` hangs (timeout >120s):** Chrome/Chromium detection hangs. Use `--no-cwv` when Core Web Vitals + browser render are not needed.
 - **PowerShell `cat` with `2>/dev/null`:** `cat file 2>/dev/null | head -N` fails with a path-not-found parser error in PowerShell 5.1. Use `Get-Content <path> -Head N` instead.
 - **PowerShell `||` separator:** Invalid. Use `;` (e.g., `cmd1; cmd2`).
+- **Node 26 / Windows `execFileSync('npm', ...)` fails with `ENOENT`/`EINVAL`:** Node ≥20 refuses to spawn `.cmd` shims without a shell, and `npm` is `npm.cmd` on Windows. **Workaround:** use `process.platform === 'win32' ? 'npm.cmd' : 'npm'` plus `shell: true` (see `website/scripts/prepare-download.mjs`). This broke `npm run build` locally while Vercel/Linux was unaffected.
+- **`npm run build` must run from repo root for the website build chain:** root `build:store`/website `prebuild` spawns the root build; running inside `website/` alone skips the `vite build` + sitemap `postbuild` steps.
 - **Audit output format preference:** For AI consumption, always prefer `seomator audit --format llm` (50-70% smaller than JSON) and `geo audit --json` (machine-readable envelope).
