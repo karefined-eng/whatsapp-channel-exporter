@@ -1,6 +1,6 @@
 # Store assets
 
-This directory contains the generated graphics prepared for the Chrome Web Store and Microsoft Edge Add-ons listings. The files are derived from the tracked product artwork and tile layouts in this repository; no private WhatsApp data is included.
+This directory contains the shared graphics prepared for the Chrome Web Store and Microsoft Edge Add-ons listings. Store screenshots use the real extension UI captures in `website/public/actual-ui-*.png`; the surrounding typography and framing are generated locally, and no private WhatsApp data is included.
 
 | File | Dimensions | Purpose |
 |---|---:|---|
@@ -10,11 +10,10 @@ This directory contains the generated graphics prepared for the Chrome Web Store
 | `screenshot-1-1280x800.png` | 1280×800 | Store screenshot: channel/date/export controls |
 | `screenshot-2-1280x800.png` | 1280×800 | Store screenshot: export progress and reporting |
 
-Regenerate every file from the repository root with:
+Regenerate the full pack from the repository root with:
 
 ```sh
-npm ci
-npm run prepare:store-assets
+python scripts/generate-marketing-assets.py
 ```
 
-The screenshot artwork is promotional repository artwork rather than a fresh authenticated WhatsApp Web capture. Review it for authenticity and privacy before submitting a store listing.
+The generator writes the store assets, the website OG PNG/JPEG files, and the website marquee image in one pass. Review the rendered files for authenticity and privacy before submitting a store listing.

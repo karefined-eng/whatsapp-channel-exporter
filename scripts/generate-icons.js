@@ -83,6 +83,14 @@ function generateExtensionIcons() {
   const dir = path.join(__dirname, "..", "src", "assets", "icons");
   fs.mkdirSync(dir, { recursive: true });
 
+  // Keep the reviewed branded icons checked into the repository. The fallback
+  // generator remains available for a fresh checkout that has no icon files.
+  const existingIcons = [16, 48, 128].map((size) => path.join(dir, `icon${size}.png`));
+  if (existingIcons.every((file) => fs.existsSync(file))) {
+    console.log("Preserving existing branded extension icons");
+    return;
+  }
+
   // WhatsApp teal: R=15, G=140, B=91 (#0f8c5b)
   [16, 48, 128].forEach((size) => {
     const png = createPng(size, size, 15, 140, 91);
