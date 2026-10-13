@@ -48,27 +48,27 @@
       <div class="container fade-in-up delay-1" style="max-width:800px;margin:0 auto 4rem auto;line-height:1.8;color:var(--text-color)">
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Can I export WhatsApp Channel messages?</h2>
-          <p>Yes. WA Channel Exporter reads the Channel view that is open in your authorized WhatsApp Web session and packages available posts into local archive formats.</p>
+          <p>Yes. WA Channel Exporter (v1.3.1, 2026-09-20) reads the active Channel view in WhatsApp Web (see <a href="/documentation">documentation</a> for setup steps) and packages available posts into a local archive.</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Does it download photos, videos, and audio?</h2>
-          <p>Yes, when the media is available to WhatsApp Web at scan time. Media is organized in date-based folders, and unavailable or failed items are recorded in the archive report.</p>
+          <p>Yes — when media is available to WhatsApp Web at scan time (v1.3.1, 2026-09-20). Files are organized by date (<code>media/YYYY-MM-DD/</code>); unavailable or failed items are recorded in <code>media-report.json</code> (see <a href="/download-media">download guide</a>).</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Does it upload my WhatsApp data?</h2>
-          <p>The extension is designed for local browser processing and does not intentionally send archive contents to a project server. Review the <a href="/privacy-policy">privacy policy</a> and source code for the current implementation.</p>
+          <p>The extension runs entirely inside your browser session (local-first design; see <a href="/privacy-policy">privacy policy</a>, 2026-09-20). It does not upload archive contents to an external server.</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Does it export every historical post?</h2>
-          <p>Not necessarily. WhatsApp Web may not load older posts, and media URLs can expire. Scroll to load more content before scanning and use the manifest to understand what was captured.</p>
+          <p>Not all historical posts load in every session. WhatsApp Web only exposes content rendered during the active session; older posts may require scrolling. Use the archive manifest (<code>manifest.json</code>, v1.3.1, 2026-09-20) to verify completeness.</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Can I export to PDF, CSV, or Markdown?</h2>
-          <p>Yes. The archive can include an offline HTML viewer, CSV, Markdown, JSONL, and media. PDF is available as a separate export scope for formatted documents.</p>
+          <p>Yes — archive formats include offline HTML viewer, CSV, Markdown (<code>posts.md</code>), JSONL (<code>posts.jsonl</code>), and ZIP. PDF export is a separate scope (v1.3.1, see <a href="/export-to-pdf">PDF guide</a>).</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Which browsers are supported?</h2>
-          <p>The project targets Chromium-based browsers including Google Chrome, Microsoft Edge, Brave, and Opera. Firefox support is not currently included.</p>
+          <p>Supported browsers: Google Chrome, Microsoft Edge, Brave, Opera (Chromium-based, v1.3.1, 2026-09-20). Firefox is not supported in this release.</p>
         </article>
         <article class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: left;">
           <h2>Can I export Channels I do not follow?</h2>
